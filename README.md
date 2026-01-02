@@ -1,6 +1,7 @@
 # Pastebin Lite
 
 A minimal Pastebin-like service built using Node.js and Express.
+**Deployed URL:** https://pastebin-lite-weld-kappa.vercel.app
 
 ---
 
