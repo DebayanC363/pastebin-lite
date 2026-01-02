@@ -7,13 +7,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // ===============================
-// ROOT ROUTE (REQUIRED FOR VERCEL)
-// ===============================
-app.get("/", (req, res) => {
-    res.status(200).send("Pastebin Lite API is running");
-});
-
-// ===============================
 // In-memory store (PDF-allowed)
 // ===============================
 const pastes = new Map();
@@ -30,6 +23,13 @@ function getNow(req) {
     }
     return Date.now();
 }
+
+// ===============================
+// ROOT ROUTE (Vercel/browser)
+// ===============================
+app.get("/", (req, res) => {
+    res.status(200).send("Pastebin Lite API is running");
+});
 
 // ===============================
 // HEALTH CHECK
